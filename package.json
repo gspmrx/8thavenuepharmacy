@@ -1,0 +1,22 @@
+{
+  "name": "8thavenuepharmacy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "tailwind.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gspmrx/8thavenuepharmacy.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gspmrx/8thavenuepharmacy/issues"
+  },
+  "homepage": "https://github.com/gspmrx/8thavenuepharmacy#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.2.4"
+  }
+}
