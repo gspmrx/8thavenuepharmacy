@@ -66,7 +66,7 @@
           " id="myInput" onkeyup="myFunction()" placeholder="Search for positions or locations." />
         </div>
 
-        <div id="jobs" class="flex flex-col mx-auto gap-4 mt-4 mb-16 max-w-[80%]"></div>
+        <div id="jobs" class="flex flex-col mx-auto gap-4 mt-4 mb-16 w-full md:max-w-[80%]"></div>
 
         <div class="text-xl m-8 min-h-[200px] text-center text-gray-700" id="nojobs">No job openings! Please check back later.</div>
     </section>
@@ -137,7 +137,7 @@
     </footer>
 
     <template id="jobposting">
-        <div class="mx-4 p-4 border rounded-md job flex flex-col gap-2">
+        <div class="mx-2 p-4 border rounded-md job flex flex-col gap-2">
             <h3 class="text-xl font-semibold title"></h3>
             <p class="text-lg desc"></p>
             <h4 class="text-lg"><span class="font-semibold">Job location:</span> <span class="text-md location"></span></h4>
@@ -221,7 +221,7 @@
                     `;
 
                         const div = document.createElement('div');
-                        div.classList.add('mx-4', 'p-4', 'border', 'rounded-md', 'bg-gray-100');
+                        div.classList.add('mx-2', 'p-4', 'border', 'rounded-md');
                         div.innerHTML = template;
                         job.duties.forEach(duty => {
                             const li = document.createElement('li');
