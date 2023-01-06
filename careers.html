@@ -1,38 +1,189 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>8th Avenue Pharmacy | Careers</title>
+    <title>8th Avenue Pharmacy</title>
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="./styles/styles.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+
+    <style>
+        body {
+            font-family: "Garamond", serif;
+        }
+    </style>
 </head>
 
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg shadow-md py-2 bg-white relative flex items-center w-full justify-between">
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <nav
+            class="navbar navbar-expand-lg py-2 bg-white relative flex items-center w-full justify-between mx-auto max-w-[85%]">
             <div class="px-8 w-full flex flex-wrap items-center justify-between">
-                <div class="flex flex-center">8th Avenue Pharmacy</div>
-                <ul class="navbar-nav ml-auto lg:flex lg:flex-row gap-4">
+                <a href="./index.html" class="flex flex-center font-semibold">8th Avenue Pharmacy</a>
+                <ul class="navbar-nav ml-auto flex gap-4">
                     <li class="nav-item">
                         <a class="nav-link block pr-2 lg:px-2 py-2 text-gray-600 hover:text-gray-700 focus:text-gray-700 transition duration-150 ease-in-out"
-                            href="./index.html" target="_self" data-mdb-ripple="true" data-mdb-ripple-color="light">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link block pr-2 lg:px-2 py-2 text-gray-600 hover:text-gray-700 focus:text-gray-700 transition duration-150 ease-in-out"
-                            href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">Contact</a>
+                            href="./index.html" data-mdb-ripple="true" data-mdb-ripple-color="light">Home</a>
                     </li>
                 </ul>
             </div>
         </nav>
-
-        <div class="text-center bg-gray-50 text-gray-800 py-20 px-6">
-            <h1 class="text-5xl font-bold mt-0 mb-6">8th Avenue Pharmacy</h1>
-            <h3 class="text-3xl font-bold mb-8">Careers</h3>
-        </div>
     </header>
+
+    <section class="min-h-[65vh] mt-10 mx-auto max-w-[85%]">
+        <h2 class="text-center text-3xl">Careers</h2>
+        <div class="xl:w-1/2 mx-auto px-2 py-6">
+            <input type="search" class="
+            form-control
+            block
+            w-full
+            px-3
+            py-3
+            text-base
+            font-normal
+            text-gray-700
+            bg-white bg-clip-padding
+            border border-solid border-gray-300
+            rounded
+            transition
+            ease-in-out
+            m-0
+            focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
+          " id="myInput" onkeyup="myFunction()" placeholder="Search for positions or locations." />
+        </div>
+
+        <div class="flex flex-col">
+            <div class="overflow-x-auto">
+                <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
+                    <div class="overflow-hidden">
+                        <table class="min-w-full" id="myTable">
+                            <thead class="bg-white border-b">
+                                <tr class="header">
+                                    <th scope="col" class="font-medium text-gray-900 px-6 py-4 text-left">
+                                        Position
+                                    </th>
+                                    <th scope="col" class="font-medium text-gray-900 px-6 py-4 text-left">
+                                        Location
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
+                                    <td class="text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                        Database Administrator
+                                    </td>
+                                    <td class="text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                        New York
+                                    </td>
+                                </tr>
+                                <tr class="bg-white transition duration-300 ease-in-out hover:bg-gray-100">
+                                    <td class="text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                        Front Desk
+                                    </td>
+                                    <td class="text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                        New York
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+     </section>
+
+    <footer class="mx-auto max-w-[85%]">
+        <div class="mx-8 px-2 py-6 border-t grid grid-cols-5">
+            <div class="flex flex-col gap-4 col-start-1">
+                <h2 class="text-lg font-medium">Contact</h2>
+                <div class="flex gap-2">
+                    <div>
+                        <i class="bi bi-geo-alt text-lg"></i>
+                    </div>
+                    <div>
+                        <a class="hover:underline hover:underline-offset-2"
+                            href="https://maps.google.com/?q=8th+avenue+pharmacy+2830+Frederick+Douglass+Blvd+New+York+NY"
+                            target="_blank">
+                            2830 Frederick Douglass Blvd <br />
+                            New York, NY, 10039
+                        </a>
+                    </div>
+                </div>
+                <div class="flex gap-2">
+                    <div>
+                        <i class="bi bi-telephone text-lg"></i>
+                    </div>
+                    <div>
+                        <a href="tel:+2122343900" class="hover:underline hover:underline-offset-2">(212) 234-3900</a>
+                    </div>
+                </div>
+                <div class="flex gap-2">
+                    <div>
+                        <i class="bi bi-printer text-lg"></i>
+                    </div>
+                    <div>
+                        <a href="tel:+2122343390" class="hover:underline hover:underline-offset-2">(212) 234-3390</a>
+                    </div>
+                </div>
+                <div class="flex gap-2">
+                    <div>
+                        <i class="bi bi-envelope text-lg"></i>
+                    </div>
+                    <div>
+                        <a href="mailto:gspmrx@gmail.com"
+                            class="hover:underline hover:underline-offset-2">gspmrx@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-col gap-4 col-start-3">
+                <h2 class="text-lg font-medium">Timings</h2>
+                <ul class="flex flex-col gap-1">
+                    <li>MON - FRI : 9 A.M - 7 P.M</li>
+                    <li></li>SAT : 9 A.M - 5 P.M</li>
+                    <li>SUN : Closed</li>
+                </ul>
+            </div>
+            <div class="flex flex-col justify-between col-start-5">
+                <div class="flex flex-col gap-4">
+                    <h2 class="text-lg font-medium">Follow us @</h2>
+                    <div class="flex">
+                        <a href="https://www.facebook.com/people/8th-Avenue-Pharmacy/100063578620024/"><i
+                                class="bi bi-facebook text-3xl text-[#3b5998]"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mx-8 px-2 py-6 border-t text-gray-500 text-end">&copy; Copyright&nbsp;<span
+                id="year"></span>&nbsp;8<sup>th</sup> Avenue Pharmacy</div>
+    </footer>
+
+    <script type="text/javascript">
+        document.getElementById('year').innerText = new Date().getFullYear();
+
+        const myFunction = () => {
+            const trs = document.querySelectorAll('#myTable tr:not(.header)')
+            const filter = document.querySelector('#myInput').value
+            const regex = new RegExp(filter, 'i')
+            const isFoundInTds = td => regex.test(td.innerHTML)
+            const isFound = childrenArr => childrenArr.some(isFoundInTds)
+            const setTrStyleDisplay = ({ style, children }) => {
+                style.display = isFound([
+                    ...children // <-- All columns
+                ]) ? '' : 'none'
+            }
+
+            trs.forEach(setTrStyleDisplay)
+        }
+    </script>
 </body>
 
 </html>

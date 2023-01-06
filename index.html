@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
@@ -7,31 +7,222 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>8th Avenue Pharmacy</title>
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="./styles/styles.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+
+    <style>
+        body {
+            font-family: "Garamond", serif;
+        }
+    </style>
 </head>
 
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg shadow-md py-2 bg-white relative flex items-center w-full justify-between">
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <nav class="navbar navbar-expand-lg py-2 bg-white relative flex items-center w-full justify-between mx-auto max-w-[85%]">
             <div class="px-8 w-full flex flex-wrap items-center justify-between">
-                <div class="flex flex-center">8th Avenue Pharmacy</div>
-                <ul class="navbar-nav ml-auto lg:flex lg:flex-row gap-4">
+                <a href="./index.html" class="flex flex-center font-semibold">8th Avenue Pharmacy</a>
+                <ul class="navbar-nav ml-auto flex gap-4">
                     <li class="nav-item">
                         <a class="nav-link block pr-2 lg:px-2 py-2 text-gray-600 hover:text-gray-700 focus:text-gray-700 transition duration-150 ease-in-out"
-                            href="./careers.html" target="_self" data-mdb-ripple="true" data-mdb-ripple-color="light">Careers</a>
+                            href="#about" data-mdb-ripple="true" data-mdb-ripple-color="light">About us</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link block pr-2 lg:px-2 py-2 text-gray-600 hover:text-gray-700 focus:text-gray-700 transition duration-150 ease-in-out"
-                            href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">Contact</a>
+                            href="#services" data-mdb-ripple="true" data-mdb-ripple-color="light">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link block pr-2 lg:px-2 py-2 text-gray-600 hover:text-gray-700 focus:text-gray-700 transition duration-150 ease-in-out"
+                            href="./careers.html" target="_self" data-mdb-ripple="true"
+                            data-mdb-ripple-color="light">Careers</a>
                     </li>
                 </ul>
             </div>
         </nav>
-
-        <div class="text-center bg-gray-50 text-gray-800 py-20 px-6">
-            <h1 class="text-5xl font-bold mt-0 mb-6">8th Avenue Pharmacy</h1>
-        </div>
     </header>
+
+    <div class="relative h-[80vh]">
+        <div id="carouselExampleIndicators" class="carousel slide relative h-full" data-bs-ride="carousel">
+            <div class="carousel-indicators absolute right-0 bottom-0 left-0 flex justify-center p-0 mb-4">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+                    aria-label="Slide 4"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4"
+                    aria-label="Slide 5"></button>
+            </div>
+            <div class="carousel-inner relative w-full overflow-hidden h-full">
+                <div class="carousel-item active float-left w-full">
+                    <img src="./images/img1.jpeg" class="block w-full" />
+                </div>
+                <div class="carousel-item float-left w-full">
+                    <img src="./images/img2.jpeg" class="block w-full" />
+                </div>
+                <div class="carousel-item float-left w-full">
+                    <img src="./images/img3.jpeg" class="block w-full" />
+                </div>
+                <div class="carousel-item float-left w-full">
+                    <img src="./images/img4.jpeg" class="block w-full" />
+                </div>
+                <div class="carousel-item float-left w-full">
+                    <img src="./images/img5.jpeg" class="block w-full" />
+                </div>
+            </div>
+            <button
+                class="carousel-control-prev absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline left-0"
+                type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon inline-block bg-no-repeat" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button
+                class="carousel-control-next absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline right-0"
+                type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <span class="carousel-control-next-icon inline-block bg-no-repeat" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+        <div class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed"
+            style="background-color: rgba(0, 0, 0, 0.75)">
+            <div class="flex justify-center items-center h-full">
+                <div class="text-center text-white px-6 md:px-12">
+                    <h1 class="text-5xl font-bold mt-0 mb-6 uppercase" style="text-shadow: 1px 1px 2px white">
+                        8<sup>th</sup> Avenue Pharmacy</h1>
+                    <h3 class="text-3xl font-bold mb-8">Trust us We Care</h3>
+                    <p class="text-xl pt-8">An independently owned community pharmacy who's mission is to promote health
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <section class="mx-auto my-10 max-w-[85%] min-h-[65vh] flex items-center" id="about">
+        <div class="flex flex-col mx-8 px-2 py-6 gap-2">
+            <h2 class="text-3xl my-4 font-medium">About us</h2>
+            <p class="text-lg">We are team comprised of pharmacists, technicians and patient care coordinators specially
+                trained.</p>
+            <p class="text-lg">We will help you every step of the
+                way from insurance authorizations
+                and co- pays to enrolling you in
+                funding assistance program. Our
+                expert technicians help at navigating
+                through financial paperwork and
+                finding ways to help ensure your
+                medications are available.</p>
+            <p class="text-lg mt-2">We offer support by:</p>
+            <ul class="text-lg flex flex-col gap-2">
+                <li><i class="bi bi-arrow-right mr-2"></i>Helping you manage side effects Reminding you when it's time
+                    for a refill.</li>
+                <li><i class="bi bi-arrow-right mr-2"></i>Confirming your dosage and medication schedule.</li>
+                <li><i class="bi bi-arrow-right mr-2"></i>Educating you on how and when to take your medication.</li>
+                <li><i class="bi bi-arrow-right mr-2"></i>Providing drug administration training Making sure you receive
+                    your medication.</li>
+                <li><i class="bi bi-arrow-right mr-2"></i>Answering your questions.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="mx-auto my-10 max-w-[85%] min-h-[65vh] flex items-center" id="services">
+        <div class="flex flex-col mx-8 px-2 py-6 gap-2 w-full">
+            <h2 class="text-3xl my-4 font-medium">Our services</h2>
+            <ul class="text-lg grid grid-cols-2 gap-4">
+                <li><i class="bi bi-arrow-right mr-2"></i>Accepts all major insurances.</li>
+                <li><i class="bi bi-arrow-right mr-2"></i>Personalized care.</li>
+                <li><i class="bi bi-arrow-right mr-2"></i>Accepts OTC card.</li>
+                <li><i class="bi bi-arrow-right mr-2"></i>Senior citizens discounts.</li>
+                <li><i class="bi bi-arrow-right mr-2"></i>DMV Services.</li>
+                <li><i class="bi bi-arrow-right mr-2"></i>Eye Check-up.</li>
+                <li><i class="bi bi-arrow-right mr-2"></i>Free home delivery and pick-up.</li>
+                <li><i class="bi bi-arrow-right mr-2"></i>Direct contact with nurses and doctors for prescription refills.</li>
+                <li><i class="bi bi-arrow-right mr-2"></i>Collaboration with your healthcare provider.</li>
+            </ul>
+        </div>
+    </section>
+
+    <footer class="mx-auto max-w-[85%]">
+        <div class="mx-8 px-2 py-6 border-t grid grid-cols-5">
+            <div class="flex flex-col gap-4 col-start-1">
+                <h2 class="text-lg font-medium">Contact</h2>
+                <div class="flex gap-2">
+                    <div>
+                        <i class="bi bi-geo-alt text-lg"></i>
+                    </div>
+                    <div>
+                        <a class="hover:underline hover:underline-offset-2"
+                            href="https://maps.google.com/?q=8th+avenue+pharmacy+2830+Frederick+Douglass+Blvd+New+York+NY"
+                            target="_blank">
+                            2830 Frederick Douglass Blvd <br />
+                            New York, NY, 10039
+                        </a>
+                    </div>
+                </div>
+                <div class="flex gap-2">
+                    <div>
+                        <i class="bi bi-telephone text-lg"></i>
+                    </div>
+                    <div>
+                        <a href="tel:+2122343900" class="hover:underline hover:underline-offset-2">(212) 234-3900</a>
+                    </div>
+                </div>
+                <div class="flex gap-2">
+                    <div>
+                        <i class="bi bi-printer text-lg"></i>
+                    </div>
+                    <div>
+                        <a href="tel:+2122343390" class="hover:underline hover:underline-offset-2">(212) 234-3390</a>
+                    </div>
+                </div>
+                <div class="flex gap-2">
+                    <div>
+                        <i class="bi bi-envelope text-lg"></i>
+                    </div>
+                    <div>
+                        <a href="mailto:gspmrx@gmail.com"
+                            class="hover:underline hover:underline-offset-2">gspmrx@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-col gap-4 col-start-3">
+                <h2 class="text-lg font-medium">Timings</h2>
+                <ul class="flex flex-col gap-1">
+                    <li>MON - FRI : 9 A.M - 7 P.M</li>
+                    <li></li>SAT : 9 A.M - 5 P.M</li>
+                    <li>SUN : Closed</li>
+                </ul>
+            </div>
+            <div class="flex flex-col justify-between col-start-5">
+                <div class="flex flex-col gap-4">
+                    <h2 class="text-lg font-medium">Follow us @</h2>
+                    <div class="flex">
+                        <a href="https://www.facebook.com/people/8th-Avenue-Pharmacy/100063578620024/"><i
+                                class="bi bi-facebook text-3xl text-[#3b5998]"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mx-8 px-2 py-6 border-t text-gray-500 text-end">&copy; Copyright&nbsp;<span
+                id="year"></span>&nbsp;8<sup>th</sup> Avenue Pharmacy</div>
+    </footer>
+
+    <script type="text/javascript">
+        document.getElementById('year').innerText = new Date().getFullYear();
+
+        var myCarousel = document.querySelector('#myCarousel')
+        var carousel = new bootstrap.Carousel(myCarousel, {
+            interval: 1000,
+        })
+    </script>
 </body>
 
 </html>
