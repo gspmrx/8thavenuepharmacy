@@ -20,6 +20,11 @@
         body {
             font-family: "Garamond", serif;
         }
+
+        #jobs ul {
+            list-style-image: url("./images/caret.svg");
+            margin-left: 1rem;
+        }
     </style>
 </head>
 
@@ -61,47 +66,12 @@
           " id="myInput" onkeyup="myFunction()" placeholder="Search for positions or locations." />
         </div>
 
-        <div class="flex flex-col">
-            <div class="overflow-x-auto">
-                <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
-                    <div class="overflow-hidden">
-                        <table class="min-w-full" id="myTable">
-                            <thead class="bg-white border-b">
-                                <tr class="header">
-                                    <th scope="col" class="font-medium text-gray-900 px-6 py-4 text-left">
-                                        Position
-                                    </th>
-                                    <th scope="col" class="font-medium text-gray-900 px-6 py-4 text-left">
-                                        Location
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
-                                    <td class="text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                        Database Administrator
-                                    </td>
-                                    <td class="text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                        New York
-                                    </td>
-                                </tr>
-                                <tr class="bg-white transition duration-300 ease-in-out hover:bg-gray-100">
-                                    <td class="text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                        Front Desk
-                                    </td>
-                                    <td class="text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                        New York
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-     </section>
+        <div id="jobs" class="flex flex-col mx-auto gap-4 mt-4 mb-16 max-w-[80%]"></div>
 
-     <footer class="mx-auto max-w-[95%] md:max-w-[85%]">
+        <div class="text-xl m-8 min-h-[200px] text-center text-gray-700" id="nojobs">No job openings! Please check back later.</div>
+    </section>
+
+    <footer class="mx-auto max-w-[95%] md:max-w-[85%]">
         <div class="mx-8 px-2 py-6 border-t grid gap-4 md:gap-0 grid-cols-1 md:grid-cols-5">
             <div class="flex flex-col gap-2 md:gap-4 md:col-start-1">
                 <h2 class="text-lg font-bold md:font-semibold">Contact</h2>
@@ -166,22 +136,121 @@
                 id="year"></span>&nbsp;8<sup>th</sup> Avenue Pharmacy</div>
     </footer>
 
+    <template id="jobposting">
+        <div class="mx-4 p-4 border rounded-md bg-gray-100 job flex flex-col gap-2">
+            <h3 class="text-xl font-semibold title"></h3>
+            <p class="text-lg desc"></p>
+            <h4 class="text-lg"><span class="font-semibold">Job location:</span> <span class="text-md location"></span></h4>
+            <h4 class="text-lg font-semibold">Job duties:</h4>
+            <ul class="text-md duties"></ul>
+            <h4 class="text-lg font-semibold">Job provider:</h4>
+            <p class="provider"></p>
+        </div>
+    </template>
+
     <script type="text/javascript">
         document.getElementById('year').innerText = new Date().getFullYear();
 
+        const jobs = [
+            {
+                title: 'Regulatory and Compliance Analyst',
+                desc: 'Regulatory and Compliance Analyst needed w/Bachelors degree or Foreign Equivalent in Pharmacy or Pharmaceutical Science and two (2) years experience as Regulatory and Compliance Analyst or Jr.',
+                location: 'NYC',
+                duties: [
+                    'Promote continuous improvement in internal audit process and risk assessment affecting business.',
+                    'Support research component of pharmacy department through development of automated processes and ensure compliance of health plan policy, procedures and regulatory standards.',
+                    'Perform risk analysis activities to maintain accuracy in dispensing. Review patient complaints for medication safety and patient awareness for Health.',
+                    'Develop operating procedures, coordinate logistics/diagnostic codes entered in the system.',
+                    'Develop and implement operating procedures ensuring corrective and preventive action.',
+                    'Involve in procedural review of third-party audit, monitoring drug recall and product recall.',
+                    'Provide the required State, Federal, Medicaid and Medicare laws compliance support and perform DEA regulations compliance including bringing together the documentation of expired Controlled substance and the inventory management of control substance.',
+                    'Monitor ICD-9 and CPT codes for accuracy of billing insurance.'
+                ],
+                provider: 'GSPM Pharmacy Inc., d/b/a 8th Avenue Pharmacy<br />2830 Frederick Douglass Blvd., New York, NY 10039',
+                positingStartDate: '',
+                positingEndDate: '01/31/2023'
+            }
+        ];
+
+        const displayJobs = () => {
+            const today = new Date();
+            let count = 0;
+            if ('content' in document.createElement('template')) {
+                const container = document.getElementById('jobs');
+                const template = document.querySelector('#jobposting');
+
+                jobs.forEach(job => {
+                    const clone = template.content.cloneNode(true);
+
+                    const from = Date.parse(job.positingStartDate) || new Date();
+                    const till = Date.parse(job.positingEndDate);
+
+                    if (today >= from && today <= till) {
+                        count++;
+                        const post = clone.querySelector('.job');
+                        post.querySelector('.title').innerText = job.title;
+                        post.querySelector('.desc').innerText = job.desc;
+                        post.querySelector('.location').innerText = job.location;
+                        post.querySelector('.provider').innerHTML = job.provider;
+
+                        job.duties.forEach(duty => {
+                            const li = document.createElement('li');
+                            li.innerText = duty;
+                            post.querySelector('.duties').appendChild(li);
+                        });
+
+                        container.appendChild(clone);
+                    }
+                });
+            } else {
+                const container = document.getElementById('jobs');
+                jobs.forEach(job => {
+                    const from = Date.parse(job.positingStartDate) || new Date();
+                    const till = Date.parse(job.positingEndDate);
+
+                    if (today >= from && today <= till) {
+                        count++;
+                        const template = `
+                        <h3 class="text-xl">${job.title}</h3>
+                        <p class="text-lg">${job.desc}</p>
+                        <h4 class="text-lg">Job location: <span class="text-md">${job.location}</span></h4>
+                        <h4 class="text-lg">Job duties:</h4>
+                        <ul class="text-md duties"></ul>
+                        <h4 class="text-lg">Job provider:</h4>
+                        <p>${job.provider}</p>
+                    `;
+
+                        const div = document.createElement('div');
+                        div.classList.add('mx-4', 'p-4', 'border', 'rounded-md', 'bg-gray-100');
+                        div.innerHTML = template;
+                        job.duties.forEach(duty => {
+                            const li = document.createElement('li');
+                            li.innerText = duty;
+                            div.querySelector('.duties').appendChild(li);
+                        });
+                        container.appendChild(div);
+                    }
+                });
+            }
+
+            document.getElementById('nojobs').classList.toggle('hidden', count);
+        };
+
+        displayJobs();
+
         const myFunction = () => {
-            const trs = document.querySelectorAll('#myTable tr:not(.header)')
+            const divs = document.querySelectorAll('#jobs')
             const filter = document.querySelector('#myInput').value
             const regex = new RegExp(filter, 'i')
-            const isFoundInTds = td => regex.test(td.innerHTML)
+            const isFoundInTds = div => regex.test(div.innerHTML)
             const isFound = childrenArr => childrenArr.some(isFoundInTds)
-            const setTrStyleDisplay = ({ style, children }) => {
+            const setDivStyleDisplay = ({ style, children }) => {
                 style.display = isFound([
-                    ...children // <-- All columns
+                    ...children
                 ]) ? '' : 'none'
             }
 
-            trs.forEach(setTrStyleDisplay)
+            divs.forEach(setDivStyleDisplay)
         }
     </script>
 </body>
