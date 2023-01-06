@@ -25,10 +25,11 @@
 
 <body>
     <header class="sticky top-0 z-50 bg-white shadow-md">
-        <nav class="navbar navbar-expand-lg py-2 bg-white relative flex items-center w-full justify-between mx-auto max-w-[85%]">
-            <div class="px-8 w-full flex flex-wrap items-center justify-between">
+        <nav
+            class="navbar navbar-expand-lg py-2 bg-white relative flex items-center w-full justify-between mx-auto max-w-[95%] md:max-w-[85%]">
+            <div class="px-4 md:px-8 w-full flex flex-col md:flex-row flex-wrap py-2 md:py-0 gap-2 md:items-center justify-between">
                 <a href="./index.html" class="flex flex-center font-semibold">8th Avenue Pharmacy</a>
-                <ul class="navbar-nav ml-auto flex gap-4">
+                <ul class="navbar-nav md:ml-auto flex flex-row md:flex-col gap-6 md:gap-4">
                     <li class="nav-item">
                         <a class="nav-link block pr-2 lg:px-2 py-2 text-gray-600 hover:text-gray-700 focus:text-gray-700 transition duration-150 ease-in-out"
                             href="#about" data-mdb-ripple="true" data-mdb-ripple-color="light">About us</a>
@@ -62,20 +63,20 @@
                     aria-label="Slide 5"></button>
             </div>
             <div class="carousel-inner relative w-full overflow-hidden h-full">
-                <div class="carousel-item active float-left w-full">
-                    <img src="./images/img1.jpeg" class="block w-full" />
+                <div class="carousel-item active float-left w-full h-full">
+                    <img src="./images/img1.jpeg" class="block w-full h-full" />
                 </div>
-                <div class="carousel-item float-left w-full">
-                    <img src="./images/img2.jpeg" class="block w-full" />
+                <div class="carousel-item float-left w-full h-full">
+                    <img src="./images/img2.jpeg" class="block w-full h-full" />
                 </div>
-                <div class="carousel-item float-left w-full">
-                    <img src="./images/img3.jpeg" class="block w-full" />
+                <div class="carousel-item float-left w-full h-full">
+                    <img src="./images/img3.jpeg" class="block w-full h-full" />
                 </div>
-                <div class="carousel-item float-left w-full">
-                    <img src="./images/img4.jpeg" class="block w-full" />
+                <div class="carousel-item float-left w-full h-full">
+                    <img src="./images/img4.jpeg" class="block w-full h-full" />
                 </div>
-                <div class="carousel-item float-left w-full">
-                    <img src="./images/img5.jpeg" class="block w-full" />
+                <div class="carousel-item float-left w-full h-full">
+                    <img src="./images/img5.jpeg" class="block w-full h-full" />
                 </div>
             </div>
             <button
@@ -107,7 +108,7 @@
 
     </div>
 
-    <section class="mx-auto my-10 max-w-[85%] min-h-[65vh] flex items-center" id="about">
+    <section class="mx-auto my-10 max-w-[95%] md:max-w-[85%] min-h-[65vh] flex items-center" id="about">
         <div class="flex flex-col mx-8 px-2 py-6 gap-2">
             <h2 class="text-3xl my-4 font-medium">About us</h2>
             <p class="text-lg">We are team comprised of pharmacists, technicians and patient care coordinators specially
@@ -133,27 +134,29 @@
         </div>
     </section>
 
-    <section class="mx-auto my-10 max-w-[85%] min-h-[65vh] flex items-center" id="services">
+    <section class="mx-auto my-10 max-w-[95%] md:max-w-[85%] min-h-[65vh] flex items-center" id="services">
         <div class="flex flex-col mx-8 px-2 py-6 gap-2 w-full">
             <h2 class="text-3xl my-4 font-medium">Our services</h2>
-            <ul class="text-lg grid grid-cols-2 gap-4">
+            <ul class="text-lg grid md:grid-cols-2 gap-4 grid-cols-1">
                 <li><i class="bi bi-arrow-right mr-2"></i>Accepts all major insurances.</li>
                 <li><i class="bi bi-arrow-right mr-2"></i>Personalized care.</li>
                 <li><i class="bi bi-arrow-right mr-2"></i>Accepts OTC card.</li>
                 <li><i class="bi bi-arrow-right mr-2"></i>Senior citizens discounts.</li>
                 <li><i class="bi bi-arrow-right mr-2"></i>DMV Services.</li>
                 <li><i class="bi bi-arrow-right mr-2"></i>Eye Check-up.</li>
-                <li><i class="bi bi-arrow-right mr-2"></i>Free home delivery and pick-up.</li>
-                <li><i class="bi bi-arrow-right mr-2"></i>Direct contact with nurses and doctors for prescription refills.</li>
+                <li><i class="bi bi-arrow-right mr-2"></i>Free home delivery of medicines.</li>
+                <li><i class="bi bi-arrow-right mr-2"></i>Prescription pick-up.</li>
+                <li><i class="bi bi-arrow-right mr-2"></i>Direct contact with nurses and doctors for prescription
+                    refills.</li>
                 <li><i class="bi bi-arrow-right mr-2"></i>Collaboration with your healthcare provider.</li>
             </ul>
         </div>
     </section>
 
-    <footer class="mx-auto max-w-[85%]">
-        <div class="mx-8 px-2 py-6 border-t grid grid-cols-5">
-            <div class="flex flex-col gap-4 col-start-1">
-                <h2 class="text-lg font-medium">Contact</h2>
+    <footer class="mx-auto max-w-[95%] md:max-w-[85%]">
+        <div class="mx-8 px-2 py-6 border-t grid gap-4 md:gap-0 grid-cols-1 md:grid-cols-5">
+            <div class="flex flex-col gap-2 md:gap-4 md:col-start-1">
+                <h2 class="text-lg font-bold md:font-semibold">Contact</h2>
                 <div class="flex gap-2">
                     <div>
                         <i class="bi bi-geo-alt text-lg"></i>
@@ -193,17 +196,17 @@
                     </div>
                 </div>
             </div>
-            <div class="flex flex-col gap-4 col-start-3">
-                <h2 class="text-lg font-medium">Timings</h2>
+            <div class="flex flex-col gap-2 md:gap-4 md:col-start-3">
+                <h2 class="text-lg font-bold md:font-semibold">Timings</h2>
                 <ul class="flex flex-col gap-1">
                     <li>MON - FRI : 9 A.M - 7 P.M</li>
-                    <li></li>SAT : 9 A.M - 5 P.M</li>
+                    <li></li>SAT : 10 A.M - 5 P.M</li>
                     <li>SUN : Closed</li>
                 </ul>
             </div>
-            <div class="flex flex-col justify-between col-start-5">
-                <div class="flex flex-col gap-4">
-                    <h2 class="text-lg font-medium">Follow us @</h2>
+            <div class="flex flex-col justify-between md:col-start-5">
+                <div class="flex flex-col gap-2 md:gap-4">
+                    <h2 class="text-lg font-bold md:font-semibold">Follow us @</h2>
                     <div class="flex">
                         <a href="https://www.facebook.com/people/8th-Avenue-Pharmacy/100063578620024/"><i
                                 class="bi bi-facebook text-3xl text-[#3b5998]"></i></a>
@@ -211,7 +214,7 @@
                 </div>
             </div>
         </div>
-        <div class="mx-8 px-2 py-6 border-t text-gray-500 text-end">&copy; Copyright&nbsp;<span
+        <div class="mx-8 px-2 py-6 border-t text-gray-500 text-center md:text-end">&copy; Copyright&nbsp;<span
                 id="year"></span>&nbsp;8<sup>th</sup> Avenue Pharmacy</div>
     </footer>
 
