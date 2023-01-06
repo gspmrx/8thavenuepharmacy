@@ -65,14 +65,40 @@
             focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
           " id="myInput" onkeyup="myFunction()" placeholder="Search for positions or locations." />
         </div>
+        <div id="jobpostings">
+            <div class="flex flex-col mx-auto mt-4 mb-16 w-full md:max-w-[90%] p-4 border rounded-md" data-job-id="1">
+                <h4 class="text-lg text-center font-bold">Job Opening for Regulatory and Compliance Analyst</h4><br />
+                <h4 class="text-md text-center font-bold leading-10">The following website advertisement will be posted
+                    from</h4>
+                <h4 class="text-md text-center font-bold">01/09/2023 - 01/31/2023</h4><br />
+                Regulatory and Compliance Analyst needed w/Bachelors degree or Foreign Equivalent in Pharmacy or
+                Pharmaceutical Science and two (2) years experience as Regulatory and Compliance Analyst or Jr.<br />
+                Regulatory and Compliance Analyst performing following job duties:<br />
+                Promote continuous improvement in internal audit process and risk assessment affecting business. Support
+                research component of pharmacy department through development of automated processes and ensure
+                compliance of health plan policy, procedures and regulatory standards. Perform risk analysis activities
+                to maintain accuracy in dispensing. Review patient complaints for medication safety and patient
+                awareness for Health. Develop operating procedures, coordinate logistics/diagnostic codes entered in the
+                system. Develop and implement operating procedures ensuring corrective and preventive action. Involve in
+                procedural review of third-party audit, monitoring drug recall and product recall. Provide the required
+                State, Federal, Medicaid and Medicare laws compliance support and perform DEA regulations compliance
+                including bringing together the documentation of expired Controlled substance and the inventory
+                management of control substance. Monitor ICD-9 and CPT codes for accuracy of billing insurance.<br />
+                Mail Resumes to:<br />
+                GSPM Pharmacy Inc., d/b/a 8th Avenue Pharmacy<br />
+                2830 Frederick Douglass Blvd., New York, NY 10039<br />
+                Job Location: NYC<br />
+            </div>
+        </div>
 
-        <div id="jobs" class="flex flex-col mx-auto gap-4 mt-4 mb-16 w-full md:max-w-[80%]"></div>
+        <!-- <div id="jobs" class="flex flex-col mx-auto gap-4 mt-4 mb-16 w-full md:max-w-[80%]"></div> -->
 
-        <div class="text-xl m-8 min-h-[200px] text-center text-gray-700" id="nojobs">No job openings! Please check back later.</div>
+        <div class="text-xl m-8 min-h-[50vh] text-center text-gray-700 flex justify-center items-center" id="nojobs">No job openings! Please check back
+            later.</div>
     </section>
 
     <footer class="mx-auto max-w-[95%] md:max-w-[85%]">
-        <div class="mx-8 px-2 py-6 border-t grid gap-4 md:gap-0 grid-cols-1 md:grid-cols-5">
+        <!-- <div class="mx-8 px-2 py-6 border-t grid gap-4 md:gap-0 grid-cols-1 md:grid-cols-5">
             <div class="flex flex-col gap-2 md:gap-4 md:col-start-1">
                 <h2 class="text-lg font-bold md:font-semibold">Contact</h2>
                 <div class="flex gap-2">
@@ -131,7 +157,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <div class="mx-8 px-2 py-6 border-t text-gray-500 text-center md:text-end">&copy; Copyright&nbsp;<span
                 id="year"></span>&nbsp;8<sup>th</sup> Avenue Pharmacy</div>
     </footer>
@@ -140,7 +166,8 @@
         <div class="mx-2 p-4 border rounded-md job flex flex-col gap-2">
             <h3 class="text-xl font-semibold title"></h3>
             <p class="text-lg desc"></p>
-            <h4 class="text-lg"><span class="font-semibold">Job location:</span> <span class="text-md location"></span></h4>
+            <h4 class="text-lg"><span class="font-semibold">Job location:</span> <span class="text-md location"></span>
+            </h4>
             <h4 class="text-lg font-semibold">Job duties:</h4>
             <ul class="text-md duties"></ul>
             <h4 class="text-lg font-semibold">Job provider:</h4>
@@ -153,6 +180,7 @@
 
         const jobs = [
             {
+                id: '1',
                 title: 'Regulatory and Compliance Analyst',
                 desc: 'Regulatory and Compliance Analyst needed w/Bachelors degree or Foreign Equivalent in Pharmacy or Pharmaceutical Science and two (2) years experience as Regulatory and Compliance Analyst or Jr.',
                 location: 'NYC',
@@ -167,10 +195,34 @@
                     'Monitor ICD-9 and CPT codes for accuracy of billing insurance.'
                 ],
                 provider: 'GSPM Pharmacy Inc., d/b/a 8th Avenue Pharmacy<br />2830 Frederick Douglass Blvd., New York, NY 10039',
-                positingStartDate: '',
+                positingStartDate: '01/09/2023',
                 positingEndDate: '01/31/2023'
             }
         ];
+
+        const showJobs = () => {
+            const container = document.getElementById('jobpostings');
+            const today = new Date();
+            let count = 0;
+            jobs.forEach(job => {
+                const from = Date.parse(job.positingStartDate);
+                const till = Date.parse(job.positingEndDate);
+
+                const els = container.querySelectorAll(`[data-job-id]`);
+                els.forEach(el => {
+                    if (el.dataset['jobId'] == job.id) {
+                        el.classList.toggle('hidden', !(today >= from && today <= till));
+                        if ((today >= from && today <= till)) {
+                            count++;
+                        }
+                    }
+                })
+            });
+
+            document.getElementById('nojobs').classList.toggle('hidden', count);
+        };
+
+        showJobs();
 
         const displayJobs = () => {
             const today = new Date();
@@ -236,10 +288,10 @@
             document.getElementById('nojobs').classList.toggle('hidden', count);
         };
 
-        displayJobs();
+        // displayJobs();
 
         const myFunction = () => {
-            const divs = document.querySelectorAll('#jobs')
+            const divs = document.querySelectorAll('#jobpostings')
             const filter = document.querySelector('#myInput').value
             const regex = new RegExp(filter, 'i')
             const isFoundInTds = div => regex.test(div.innerHTML)

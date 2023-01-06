@@ -859,6 +859,14 @@ video {
   min-height: 200px;
 }
 
+.min-h-\[74vh\] {
+  min-height: 74vh;
+}
+
+.min-h-\[50vh\] {
+  min-height: 50vh;
+}
+
 .w-full {
   width: 100%;
 }
@@ -2104,6 +2112,14 @@ video {
   font-variant-numeric: var(--tw-ordinal) var(--tw-slashed-zero) var(--tw-numeric-figure) var(--tw-numeric-spacing) var(--tw-numeric-fraction);
 }
 
+.leading-5 {
+  line-height: 1.25rem;
+}
+
+.leading-10 {
+  line-height: 2.5rem;
+}
+
 .text-gray-600 {
   --tw-text-opacity: 1;
   color: rgb(75 85 99 / var(--tw-text-opacity));
@@ -2601,6 +2617,10 @@ video {
 
   .md\:max-w-\[80\%\] {
     max-width: 80%;
+  }
+
+  .md\:max-w-\[90\%\] {
+    max-width: 90%;
   }
 
   .md\:grid-cols-5 {
